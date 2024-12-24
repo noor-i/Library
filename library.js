@@ -31,7 +31,7 @@ function addBookToLibrary(event) {
         myLibrary.push(book);
         displayBooks();
         form.style.display = 'none'; // Hide the form
-        form.reset(); // Reset the form fields
+        form.reset();
     }
     else{
         alert("Please enter all fields.");
@@ -39,12 +39,17 @@ function addBookToLibrary(event) {
 }
 submitBtn.addEventListener("click", addBookToLibrary);
 
+function removeBook(index) {
+    myLibrary.splice(index, 1); // splice removes elements from array
+    displayBooks(); // re-render books display
+}
+
 function displayBooks() {
     //Library box div that stores book divs
     const library = document.querySelector('#library-box');
     library.innerHTML = ''; // Clear previous display
 
-    for(i=0; i<myLibrary.length; i++){
+    for(let i=0; i<myLibrary.length; i++){
         // Book div with three elements
         const book = document.createElement('div');
         book.style.display = 'flex';
@@ -53,26 +58,42 @@ function displayBooks() {
         book.style.border = '3px solid black';
         book.style.padding = '5px';
         book.style.borderRadius = '5px'
-        book.style.width = '170px';
+        book.style.width = '190px';
         book.style.height = '200px';
-        book.style.overflow = 'auto';
+        book.style.overflowY = 'hidden';
+        book.style.overflowX = 'auto';
 
         const bookTitle = document.createElement('p');
         bookTitle.textContent = `${myLibrary[i].title}`;
 
         const bookAuthor = document.createElement('p');
-        bookAuthor.textContent = `By: ${myLibrary[i].author}`;
+        bookAuthor.textContent = `By:${myLibrary[i].author}`;
 
         const bookYear = document.createElement('p');
-        bookYear.textContent = `Year: ${myLibrary[i].year}`;
+        bookYear.textContent = `Year:${myLibrary[i].year}`;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.style.width = '30px';
+        removeBtn.style.height = '30px';
+        removeBtn.textContent = 'X';
+        removeBtn.style.fontSize = '15px';
+        removeBtn.style.marginTop = '10px';
+        removeBtn.style.fontWeight = 'bold';
+        removeBtn.style.backgroundColor = 'lightpink';
+        removeBtn.style.borderRadius = '5px';
+        removeBtn.style.color = 'white';
+
+        removeBtn.addEventListener("click", () => {
+            removeBook(i)
+        });
         
         book.appendChild(bookTitle);
         book.appendChild(bookAuthor);
         book.appendChild(bookYear);
+        book.appendChild(removeBtn);
 
         library.appendChild(book);
     }
-
 }
 
 /*
