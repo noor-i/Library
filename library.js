@@ -7,16 +7,10 @@ function Book(title, author, year) {
     this.year = year;
 }
 
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
-const year = document.querySelector('#year');
-function addBookToLibrary(title, author, year) {
-    const book = new Book(title, author, year);
-    myLibrary.push(book);
-}
-
 const addBtn = document.querySelector('#add-btn');
 const form = document.querySelector('.form-box');
+const submitBtn = document.querySelector('#submit-btn');
+
 function showFormBox (){
     if(form){
         form.style.display = 'block';
@@ -27,9 +21,23 @@ function showFormBox (){
 }
 addBtn.addEventListener("click", showFormBox);
 
-const submitBtn = document.querySelector('#submit-btn');
-function displayBooks() {
+function addBookToLibrary() {
+    const title = document.querySelector('#title');
+    const author = document.querySelector('#author');
+    const year = document.querySelector('#year');
+    if(title && author && year){
+        const book = new Book(title, author, year);
+        myLibrary.push(book);
+        displayBooks();
+    }
+    else{
+        alert("Please enter all fields.");
+    }
+}
+submitBtn.addEventListener("click", addBookToLibrary);
 
+function displayBooks() {
+    alert("i love u, keep going.");
 }
 
 /*
