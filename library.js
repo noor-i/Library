@@ -30,6 +30,8 @@ function addBookToLibrary(event) {
         const book = new Book(title, author, year);
         myLibrary.push(book);
         displayBooks();
+        form.style.display = 'none'; // Hide the form
+        form.reset(); // Reset the form fields
     }
     else{
         alert("Please enter all fields.");
