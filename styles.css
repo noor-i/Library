@@ -55,7 +55,6 @@ body{
 #library-box{
     display: flex;
     flex-wrap: wrap;
-    padding: 15px;
     margin: 10px;
     justify-content: center;
 }
