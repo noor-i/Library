@@ -1,2 +1,2 @@
-# Library
-a virtual library application 
+# Library App
+This is a simple web-based library app built with HTML, CSS, and JavaScript to help you manage your books. It features the ability to add books with their title, author, and publication year, remove them from your library, and toggle their read status. The project demonstrates my growing skills in full-stack web development and is a step toward creating interactive applications with dynamic features. :)
