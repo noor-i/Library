@@ -21,10 +21,11 @@ function showFormBox (){
 }
 addBtn.addEventListener("click", showFormBox);
 
-function addBookToLibrary() {
-    const title = document.querySelector('#title');
-    const author = document.querySelector('#author');
-    const year = document.querySelector('#year');
+function addBookToLibrary(event) {
+    event.preventDefault();
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const year = document.querySelector('#year').value;
     if(title && author && year){
         const book = new Book(title, author, year);
         myLibrary.push(book);
@@ -37,7 +38,39 @@ function addBookToLibrary() {
 submitBtn.addEventListener("click", addBookToLibrary);
 
 function displayBooks() {
-    alert("i love u, keep going.");
+    //Library box div that stores book divs
+    const library = document.querySelector('#library-box');
+    library.innerHTML = ''; // Clear previous display
+
+    for(i=0; i<myLibrary.length; i++){
+        // Book div with three elements
+        const book = document.createElement('div');
+        book.style.display = 'flex';
+        book.style.flexDirection = 'column';
+        book.style.margin = '5px';
+        book.style.border = '3px solid black';
+        book.style.padding = '5px';
+        book.style.borderRadius = '5px'
+        book.style.width = '170px';
+        book.style.height = '200px';
+        book.style.overflow = 'auto';
+
+        const bookTitle = document.createElement('p');
+        bookTitle.textContent = `${myLibrary[i].title}`;
+
+        const bookAuthor = document.createElement('p');
+        bookAuthor.textContent = `By: ${myLibrary[i].author}`;
+
+        const bookYear = document.createElement('p');
+        bookYear.textContent = `Year: ${myLibrary[i].year}`;
+        
+        book.appendChild(bookTitle);
+        book.appendChild(bookAuthor);
+        book.appendChild(bookYear);
+
+        library.appendChild(book);
+    }
+
 }
 
 /*
