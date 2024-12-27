@@ -1,5 +1,5 @@
 # Library App
-This is a simple Library App built using HTML, CSS, and JavaScript. It allows users to manage a collection of books, with the ability to add, remove, and toggle the read status of each book. The app demonstrates my proficiency in DOM manipulation, event handling, and dynamic content rendering.
+A Library App built using HTML, CSS, and JavaScript. It allows users to manage a collection of books, with the ability to add, remove, and toggle the read status of each book. The app demonstrates my proficiency in DOM manipulation, event handling, and dynamic content rendering.
 
 ## Features
 * **Add Book:** Users can add a new book by filling out a form with the book's title, author, and year of publication.
