@@ -6,3 +6,9 @@
     text-align: center;
     margin: 50px;
 }
+
+.chatbot{
+    display: block;
+    background-color: cadetblue;
+    text-align: center;
+}
