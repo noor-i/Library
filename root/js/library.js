@@ -30,8 +30,8 @@ addBtn.addEventListener("click", showFormBox);
 
 function closeForm(event) {
     event.preventDefault(); // Prevent form submission when closing
-    form.reset();
     form.style.display = 'none'; // Hide the form
+    form.reset();
 }
 closeBtn.addEventListener("click", closeForm);
 

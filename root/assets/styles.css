@@ -11,11 +11,13 @@ body{
     align-items: center;
     justify-content: space-between;
     background-color: rgba(134, 182, 182, 0.5);
+    box-shadow: 3px 2px 20px rgb(82, 112, 124);
 }
 
 #navbar h3{
     margin-left: 50px;
     font-size: 20px;
+    color: rgb(31, 34, 36);
 }
 
 #navbar nav{
@@ -29,7 +31,7 @@ body{
 
 #navbar nav a{
     text-decoration: none;
-    color: black;
+    color: rgb(31, 34, 36);
     padding: 20px;
 }
 
@@ -59,6 +61,11 @@ body{
     border-width: 2px;
     border-radius: 5px;
     margin-bottom: 15px;
+}
+
+#add-btn:hover{
+    box-shadow: 0px 1px 4px rgb(145, 160, 166);
+    cursor: pointer;
 }
 
 .form-box{
