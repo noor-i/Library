@@ -128,10 +128,3 @@ function displayBooks() {
         library.appendChild(book);
     }
 }
-
-/*
-const book1 = new Book('The Alchemist', 'Paulo Coelho', 2007);
-const book2 = new Book('Harry Potter: The Goblet of Fire', 'JK Rowling', 2012);
-myLibrary.push(book1);
-myLibrary.push(book2);
-*/
