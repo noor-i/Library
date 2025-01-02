@@ -11,16 +11,29 @@ function Book(title, author, year, read) {
 const addBtn = document.querySelector('#add-btn');
 const form = document.querySelector('.form-box');
 const submitBtn = document.querySelector('#submit-btn');
+const closeBtn = document.querySelector('#close-button');
+
+document.addEventListener("DOMContentLoaded", function() {
+    form.style.display = 'none'; // Ensure form is hidden when the page loads
+});
+
 
 function showFormBox (){
     if(form){
-        form.style.display = 'block';
+        form.style.display = 'flex';
     }
     else{
         console.log("form box not found.")
     }
 }
 addBtn.addEventListener("click", showFormBox);
+
+function closeForm(event) {
+    event.preventDefault(); // Prevent form submission when closing
+    form.reset();
+    form.style.display = 'none'; // Hide the form
+}
+closeBtn.addEventListener("click", closeForm);
 
 function addBookToLibrary(event) {
     event.preventDefault();

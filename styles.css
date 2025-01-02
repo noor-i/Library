@@ -61,24 +61,43 @@ body{
     margin-bottom: 15px;
 }
 
+.form-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 15px 30px 15px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: cadetblue;
+    border-radius: 5px;
+    height: 250px;
+    width: 300px;
+    align-content: center;
+    margin-left: 480px;
+    margin-top: 15px;
+}
+
+
 #submit-btn{
     background-color: cadetblue;
     color: white;
     font-weight: bold;
     width: 65px;
     height: 25px;
+    margin-top: 10px;
     border-width: 2px;
     border-radius: 5px;;
 }
 
-.form-box{
-    display: none;
-    border-width: 3px;
-    border-style: solid;
-    border-color: cadetblue;
-    padding-left: 5px;
-    margin-top: 5px;
-    border-radius: 5px;
+.form-box div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#close-button{
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #library-box{
