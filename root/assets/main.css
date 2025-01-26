@@ -1,26 +1,32 @@
-
 html, body {
     margin: 0px;
     padding: 0px;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background: linear-gradient(135deg, rgba(255,247,173,1) 0%, rgba(255,201,218,1) 59%);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: fixed;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .container{
     height: 100vh;
     width: 100%;
     background-image: url(images/background.png);
-    position: relative;
+    position: fixed;
     background-size: cover;
     background-position:center;
 }
 
 .navbar{
-    width: 95%;
-    height: 8%;
+    background-color: rgba(246, 240, 240, 40%);
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    height: 50px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -28,14 +34,20 @@ html, body {
 }
 
 .navbar .website-name{
+    margin-left: 10px;
     display: flex;
     align-items: center;
-    margin-left: -15px;
+
 }
 
 .website-name h1{
-    margin-left: -30px;
-    font-size: 20px;
+    margin-left: -30px; /*pushes logo and website name together*/
+    font-size: 30px;
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+    align-items: center;
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 .logo{
@@ -44,14 +56,72 @@ html, body {
     cursor: pointer;
 }
 
-.navbar ul li{
+.navbar ul{
+    width: 65%;
     list-style: none;
-    display:inline-block;
-    margin: 0px 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.navbar li{
+    height: 50px;
 }
 
 .navbar ul li a{
+    height: 100%;
+    padding: 0 30px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
     color: rgb(227, 69, 12);
-    font-size: 15px;
+}
+
+.navbar ul li a:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+.sidebar li{
+    list-style: none;
+    margin: 20px 20px;
+    width: 100%;
+}
+
+.sidebar a{
+    text-decoration: none;
+    font-size: 20px;
+    width: 100%;
+    color: rgb(227, 69, 12);
+}
+
+@media (max-width: 800px) {
+    .hideOnMobile{
+        display: none;
+    }
+}
+
+@media (max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
 }
