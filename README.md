@@ -3,7 +3,7 @@ This is a Library App built using HTML, CSS, and JavaScript. It allows users to 
 ## Features
 * **Add Book:** Users can add a new book by filling out a form with the book's title, author, and year of publication.
 * **Remove Book:** Each book in the library can be removed with a simple click on the "X" button.
-* **Toggle Read Status:** Users can update the read status of a book by clicking on "Read" button (green : read / grey : unread).
+* **Toggle Read Status:** Users can update the read status of a book by clicking on "Read" button and can turn the status to "Unread" by reclicking.
 ## Ongoing Features
 **Book Recommender (In Progress):**
 * This feature will use AI-powered recommendations to suggest books based on the user's interests.
