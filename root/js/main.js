@@ -17,3 +17,8 @@ function closeSidebar() {
     navBar.style.display = 'flex';
 }
 exitLogo.addEventListener("click", closeSidebar);
+
+// Background particle floaters animation code
+particlesJS.load('particles-js', '../assets/particlesjs-config.json', function() {
+    console.log('particles.js loaded - callback');
+});
