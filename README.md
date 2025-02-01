@@ -9,9 +9,10 @@ A Virtual Library App built using HTML, CSS, and JavaScript. It allows users to 
 * **Remove Book:** Each book in the library can be removed with a simple click on the "X" button.
 * **Toggle Read Status:** Users can update the read status of a book by clicking on "Read" button and can turn the status to "Unread" by reclicking.
 ## Ongoing Features
-**AI-Book Finder (In Progress):**
+**AI-Book Finder (In Progress) and other changes:**
 * This feature will use AI-powered recommendations to suggest books based on the user's interests.
 * Currently integrating a generative AI model (e.g., Cohere API) to provide personalized book suggestions.
+* Updated design of the website/applying responsive web design principles to all pages.
 
 
 
