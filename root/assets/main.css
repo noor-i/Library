@@ -9,6 +9,8 @@ html, body {
     padding: 0px;
     min-height: 100vh;
     width: 100%;
+    overflow-y: auto; /* Allows vertical scrolling */
+    overflow-x: hidden;
     background: linear-gradient(135deg, rgba(255,247,173,1) 0%, rgba(255,201,218,1) 59%);
     background-position: center;
     background-repeat: repeat;
@@ -34,14 +36,18 @@ html, body {
 }
 
 .navbar{
-    background-color: rgba(246, 240, 240, 40%);
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0; /* Sticks to the top */
+    z-index: 100;
     width: 100%;
     height: 50px;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgba(246, 240, 240, 40%);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 }
 
 .navbar .website-name{
