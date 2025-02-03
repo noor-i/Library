@@ -1,115 +1,111 @@
 body{
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    min-height: 100vh; /* Full screen height */
-    margin: 0; /* Remove default margin */
+    min-height: 100vh; 
+    margin: 0; 
     padding: 0;
 }
 
-#navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(134, 182, 182, 0.5);
-    box-shadow: 3px 2px 20px rgb(82, 112, 124);
-}
-
-#navbar h3{
-    margin-left: 50px;
-    font-size: 20px;
-    color: rgb(31, 34, 36);
-}
-
-#navbar nav{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 300px;
-    padding-right: 300px;
-    flex-grow: 1;
-    text-align: center;
-}
-
-#navbar nav a{
-    text-decoration: none;
-    color: rgb(31, 34, 36);
-    padding: 20px;
-}
-
-#navbar nav a:hover{
-    background-color: rgba(134, 182, 182, 0.9);
-}
-
-.intro-div{
-    margin-top: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-}
-
-.intro-div h1{
-    margin-bottom: 0px;
-}
-
-#add-btn{
-    background-color: rgba(134, 182, 182, 0.8);
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    width: 100px;
-    height: 35px;
-    border-width: 2px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-
-#add-btn:hover{
-    box-shadow: 0px 1px 4px rgb(145, 160, 166);
-    cursor: pointer;
-}
-
-.form-box{
+.page-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 15px 15px 30px 15px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: cadetblue;
-    border-radius: 5px;
-    height: 250px;
-    width: 300px;
-    align-content: center;
-    margin-left: 480px;
-    margin-top: 15px;
-}
-
-
-#submit-btn{
-    background-color: cadetblue;
-    color: white;
-    font-weight: bold;
-    width: 65px;
-    height: 25px;
-    margin-top: 10px;
-    border-width: 2px;
-    border-radius: 5px;;
-}
-
-.form-box div{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin: 7vh 8vw;
+    gap: 1rem;
+}
+
+.page-content .intro-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.page-content .intro-div h1{
+    font-size: 2.5rem;
+}
+
+#add-btn {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 2rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+#add-btn:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+#add-btn:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.page-content .form-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 3px solid rgba(246, 141, 55, 0.7);
+    border-radius: 5px;
+    width: min-content;
+    height: min-content;
+    padding: 1rem 1.5rem;
+    background-color: rgba(246, 141, 55, 0.7);
+}
+
+.form-box p input{
+    font-size: 1.3rem;
+    
+}
+
+.form-box .box-heading{
+    display: flex;
+    gap: 3rem;
+}
+
+.form-box .box-heading h3{
+    white-space: nowrap;
 }
 
 #close-button{
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 1rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    background-color: white;
+    color: black;
+}
+
+#submit-btn{
+    font-size: 1rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    background-color: white;
+    color: black; 
 }
 
 #library-box{
     display: flex;
     flex-wrap: wrap;
-    margin: 10px;
     justify-content: center;
+    align-items: center;
+    margin: 1rem 1rem;
 }
 
