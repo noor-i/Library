@@ -77,23 +77,22 @@ function displayBooks() {
         const book = document.createElement('div');
         book.classList.add('book');
 
-        const bookTitle = document.createElement('p');
+        const bookTitle = document.createElement('h2');
         bookTitle.textContent = `${myLibrary[i].title}`;
 
-        const bookAuthor = document.createElement('p');
+        const bookAuthor = document.createElement('h3');
         bookAuthor.textContent = `By: ${myLibrary[i].author}`;
 
-        const bookYear = document.createElement('p');
+        const bookYear = document.createElement('h3');
         bookYear.textContent = `Year: ${myLibrary[i].year}`;
 
         //Div to contain the remove and read book buttons
         const bookBtns = document.createElement('div');
         bookBtns.classList.add('book-buttons');
 
-        const removeBtn = document.createElement('button');
-        removeBtn.classList.add('remove-button');
-        removeBtn.textContent = 'X';
-        removeBtn.addEventListener("click", () => {removeBook(i)});
+        const removeBtn = document.createElement('i');
+        removeBtn.classList.add('fas', 'fa-trash', 'remove-button'); // FontAwesome icon classes + custom class
+        removeBtn.addEventListener("click", () => { removeBook(i) });
 
         const readBtn = document.createElement('button');
         readBtn.classList.add('read-button');

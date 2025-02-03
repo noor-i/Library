@@ -10,7 +10,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 7vh 8vw;
+    margin: 5rem 5rem;
     gap: 1rem;
 }
 
@@ -51,7 +51,8 @@ body{
   line-height: 2.5;
   outline: transparent;
   padding: 0 2rem;
-  margin: 0.5rem 0;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
   text-align: center;
   text-decoration: none;
   transition: box-shadow .2s ease-in-out;
@@ -83,30 +84,32 @@ body{
     background-color: rgba(246, 141, 55, 0.7);
 }
 
+.form-box p{
+    display: flex;
+    flex-direction: column;
+}
+
 .form-box p input{
-    font-size: 1.3rem;  
+    font-size: 1.3rem;
+}
+
+.form-box p label{
+    font-size: 1.3rem;
 }
 
 .form-box .box-heading{
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 6rem;
 }
 
 .form-box .box-heading h3{
     white-space: nowrap;
+    font-size: 1.6rem;
 }
 
 .form-box .material-symbols-outlined {
     cursor: pointer;
-}
-
-.bobo{
-    font-size: 1rem;
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
-    background-color: white;
-    color: black; 
 }
 
 #submit-btn {
@@ -172,6 +175,7 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+    margin-bottom: 2rem;
     gap: 1rem 1rem;
 }
 
@@ -200,29 +204,184 @@ body{
 .book-buttons{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .remove-button{
-    width: min-content;
-    height: min-content;
-    padding: .2rem;
-    font-size: .8rem;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: lightpink;
-    border-radius: 3px;
-    color: #000000;
+    color: #6f6264;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
 }
 
-.read-button{
-    width: min-content;
-    height: min-content;
-    padding: .2rem;
-    font-size: .8rem;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 3px;
-    color: #000000;
+.remove-button:hover{
+    cursor: pointer;
 }
 
+.read-button {
+  background-color: #b0bec7;
+  border-radius: 3px;
+  border: 1px solid #03101a;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: clamp(1.1rem, 1.2vw, 1.3rem);
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 0.17rem .7em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
 
+.read-button:hover,
+.read-button:focus {
+  background-color: #8b99a3;
+  color: #2c5777;
+}
+
+.read-button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.read-button:active {
+  background-color: #8b99a3;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+@media (max-width:654px) {
+    .page-content .intro-div h1 {
+        font-size: 3rem; /* Increase the font size of the title */
+    }
+
+    .page-content .intro-div h2 {
+        font-size: 2rem; /* Increase the font size of the subtitle */
+    }
+
+    #add-btn {
+        font-size: 1.1rem; /* Increase the button text size */
+        padding: 0.1rem 2rem;
+    }
+
+    .form-box p input {
+        font-size: 1.8rem; /* Make input fields bigger */
+    }
+
+    .form-box p label{
+        font-size: 1.6rem;
+    }
+
+    .book{
+        width: 220px;
+    }
+
+    .book p {
+        font-size: 1.4rem; /* Make book details text larger */
+    }
+}
+
+/* Larger font sizes for bigger screens */
+@media (min-width: 655px) { /* Target medium screens (iPad) */
+    .page-content .intro-div h1 {
+        font-size: 3rem; /* Increase the font size of the title */
+    }
+
+    .page-content .intro-div h2 {
+        font-size: 2rem; /* Increase the font size of the subtitle */
+    }
+
+    #add-btn {
+        font-size: 1.1rem; /* Increase the button text size */
+        padding: 0.1rem 2rem;
+    }
+
+    .form-box p input {
+        font-size: 1.8rem; /* Make input fields bigger */
+    }
+
+    .form-box p label{
+        font-size: 1.6rem;
+    }
+
+    .book{
+        width: 200px;
+    }
+
+    .book p {
+        font-size: 1.4rem; /* Make book details text larger */
+    }
+}
+
+@media (min-width: 800px) { /* Target large screens (desktop) */
+    .page-content .intro-div h1 {
+        font-size: 3.5rem; /* Further increase for larger screens */
+    }
+
+    .page-content .intro-div h2 {
+        font-size: 2.2rem; /* Further increase for larger screens */
+    }
+
+    #add-btn {
+        font-size: 1.3rem; /* Slightly larger button text */
+        padding: 0.1rem 2rem;
+    }
+
+    .form-box .box-heading h3{
+        font-size: 1.8rem;
+    }
+
+    .form-box p input {
+        font-size: 1.7rem; /* Make inputs much bigger */
+    }
+
+    .form-box p label{
+        font-size: 1.8rem;
+    }
+
+    .book p {
+        font-size: 1.4rem; /* Increase book text size */
+    }
+
+    .book{
+        width:230px;
+    }
+}
+
+@media (min-width: 900px) { /* Target large screens (desktop) */
+    .page-content .intro-div h1 {
+        font-size: 3rem; /* Further increase for larger screens */
+    }
+
+    .page-content .intro-div h2 {
+        font-size: 2rem; /* Further increase for larger screens */
+    }
+
+    #add-btn {
+        font-size: 1rem; /* Slightly larger button text */
+        padding: 0.1rem 2rem;
+    }
+
+    .form-box p input {
+        font-size: 1.4rem; /* Make inputs much bigger */
+    }
+
+    .form-box p label{
+        font-size: 1.4rem;
+    }
+
+    .book p {
+        font-size: 1rem; /* Increase book text size */
+    }
+
+    .book{
+        width:180px;
+    }
+}
