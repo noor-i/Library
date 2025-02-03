@@ -24,6 +24,18 @@ body{
 
 .page-content .intro-div h1{
     font-size: 2.5rem;
+    text-align: center;
+}
+
+.page-content .intro-div h2{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+@media (width: 580px) {
+    .page-content .intro-div h2{
+        text-align: center;
+    }
 }
 
 #add-btn {
@@ -72,28 +84,24 @@ body{
 }
 
 .form-box p input{
-    font-size: 1.3rem;
-    
+    font-size: 1.3rem;  
 }
 
 .form-box .box-heading{
     display: flex;
-    gap: 3rem;
+    align-items: center;
+    gap: 4rem;
 }
 
 .form-box .box-heading h3{
     white-space: nowrap;
 }
 
-#close-button{
-    font-size: 1rem;
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
-    background-color: white;
-    color: black;
+.form-box .material-symbols-outlined {
+    cursor: pointer;
 }
 
-#submit-btn{
+.bobo{
     font-size: 1rem;
     padding-left: 0.1rem;
     padding-right: 0.1rem;
@@ -101,11 +109,120 @@ body{
     color: black; 
 }
 
+#submit-btn {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 0.3rem 0.78rem;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+#submit-btn-4:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+#submit-btn:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+#submit-btn:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+#submit-btn:focus {
+  outline: 1px transparent;
+}
+
+#submit-btn:before {
+  display: none;
+}
+
+#submit-btn:-webkit-details-marker {
+  display: none;
+}
+
 #library-box{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 1rem 1rem;
+    margin-top: 1rem;
+    gap: 1rem 1rem;
 }
+
+.book{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 3px solid rgba(245, 110, 7, 0.5);
+    border-radius: 5px;
+    width: 180px;
+    height: auto;
+    padding: 1rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,.3) 0%, rgba(253,29,29,0.1) 0%, rgba(252,134,57,0.4581235697940504) 0%, rgba(252,124,54,0.3) 47%, rgba(252,176,69,0.4) 73%);
+    backdrop-filter: blur(1.5px);
+}
+
+.book p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.book-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.remove-button{
+    width: min-content;
+    height: min-content;
+    padding: .2rem;
+    font-size: .8rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightpink;
+    border-radius: 3px;
+    color: #000000;
+}
+
+.read-button{
+    width: min-content;
+    height: min-content;
+    padding: .2rem;
+    font-size: .8rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 3px;
+    color: #000000;
+}
+
 

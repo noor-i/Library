@@ -11,7 +11,7 @@ function Book(title, author, year, read) {
 const addBtn = document.querySelector('#add-btn');
 const form = document.querySelector('.form-box');
 const submitBtn = document.querySelector('#submit-btn');
-const closeBtn = document.querySelector('#close-button');
+const closeBtn = document.querySelector('.form-box .material-symbols-outlined');
 
 document.addEventListener("DOMContentLoaded", function() {
     form.style.display = 'none'; // Ensure form is hidden when the page loads
@@ -69,24 +69,13 @@ function readStatus(index){
 }
 
 function displayBooks() {
-    //Library box div that stores book divs
     const library = document.querySelector('#library-box');
     library.innerHTML = ''; // Clear previous display
 
     for(let i=0; i<myLibrary.length; i++){
         // Book div with three elements
         const book = document.createElement('div');
-        book.style.display = 'flex';
-        book.style.flexDirection = 'column';
-        book.style.margin = '5px';
-        book.style.border = '3px solid black';
-        book.style.padding = '10px';
-        book.style.borderRadius = '5px'
-        book.style.width = '190px';
-        book.style.height = '200px';
-        book.style.overflowY = 'hidden';
-        book.style.overflowX = 'auto';
-        book.style.whiteSpace = 'nowrap';
+        book.classList.add('book');
 
         const bookTitle = document.createElement('p');
         bookTitle.textContent = `${myLibrary[i].title}`;
@@ -99,45 +88,21 @@ function displayBooks() {
 
         //Div to contain the remove and read book buttons
         const bookBtns = document.createElement('div');
-        bookBtns.style.display = 'flex';
-        bookBtns.style.paddingTop = '8px';
-        bookBtns.style.gap = '100px';
+        bookBtns.classList.add('book-buttons');
 
         const removeBtn = document.createElement('button');
-        removeBtn.style.width = '30px';
-        removeBtn.style.height = '30px';
+        removeBtn.classList.add('remove-button');
         removeBtn.textContent = 'X';
-        removeBtn.style.fontSize = '15px';
-        removeBtn.style.fontWeight = 'bold';
-        removeBtn.style.backgroundColor = 'lightpink';
-        removeBtn.style.borderRadius = '5px';
-        removeBtn.style.color = 'white';
-
-        removeBtn.addEventListener("click", () => {
-            removeBook(i)
-        });
+        removeBtn.addEventListener("click", () => {removeBook(i)});
 
         const readBtn = document.createElement('button');
-        readBtn.style.width = '60px';
-        readBtn.style.height = '30px';
+        readBtn.classList.add('read-button');
         readBtn.textContent = 'Read';
-        readBtn.style.fontSize = '15px';
-        readBtn.style.fontWeight = 'bold';
-        readBtn.style.backgroundColor = myLibrary[i].read ?'#228B22' : 'lightgrey';
-        readBtn.style.borderRadius = '5px';
-        readBtn.style.color = 'white';
-
-        readBtn.addEventListener("click", () => {
-            readStatus(i);
-        });
+        readBtn.style.backgroundColor = myLibrary[i].read ?'#b5dfa7' : 'lightgrey';
+        readBtn.addEventListener("click", () => {readStatus(i)});
         
-        book.appendChild(bookTitle);
-        book.appendChild(bookAuthor);
-        book.appendChild(bookYear);
-        book.appendChild(bookBtns);
-        bookBtns.appendChild(removeBtn);
-        bookBtns.appendChild(readBtn);
-
+        bookBtns.append(removeBtn, readBtn);
+        book.append(bookTitle, bookAuthor, bookYear, bookBtns);
         library.appendChild(book);
     }
 }
