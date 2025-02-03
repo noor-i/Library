@@ -1,5 +1,5 @@
 # Virtual-Lib 📖
-A Virtual Library App built using HTML, CSS, and JavaScript. It allows users to manage a collection of books, with the ability to add, remove, and toggle the read status of each book. The app demonstrates my proficiency in DOM manipulation, event handling, and responsive web design.
+A Virtual Library App built from scratch using HTML, CSS, and JavaScript. It allows users to manage a collection of books, with the ability to add, remove, and toggle the read status of each book. The app demonstrates my proficiency in DOM manipulation, event handling, and responsive web design.
 
 <img src="https://github.com/user-attachments/assets/8b69d4d4-9443-492c-823f-67ecc2c1bb66" width="800" />
 
