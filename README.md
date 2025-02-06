@@ -11,7 +11,7 @@ A Virtual Library App built from scratch using HTML, CSS, and JavaScript. It all
 * **Toggle Read Status:** Users can update the read status of a book by clicking on "Read" button and can turn the status to "Unread" by reclicking.
 ## Ongoing Features
 **AI-Book Finder (In Progress):**
-* Currently integrating a generative AI model (e.g., Cohere API).
+* Currently integrating a generative AI model (e.g., OpenAI API).
 * This feature will provide personalized book suggestions based on the user's interests.
 
 
