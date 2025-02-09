@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, year, read) {
     //constructor
@@ -15,8 +15,11 @@ const closeBtn = document.querySelector('.form-box .material-symbols-outlined');
 
 document.addEventListener("DOMContentLoaded", function() {
     form.style.display = 'none'; // Ensure form is hidden when the page loads
+    // Load books from local storage
+    const storedLibrary = localStorage.getItem("myLibrary");
+    myLibrary = storedLibrary ? JSON.parse(storedLibrary) : []; 
+    displayBooks();
 });
-
 
 function showFormBox (){
     if(form){
@@ -35,6 +38,10 @@ function closeForm(event) {
 }
 closeBtn.addEventListener("click", closeForm);
 
+function saveToLocalStorage(){
+    localStorage.setItem('myLibrary', JSON.stringify(myLibrary)); // Save myLibrary array to local storage
+}
+
 function addBookToLibrary(event) {
     event.preventDefault();
     const title = document.querySelector('#title').value;
@@ -42,7 +49,8 @@ function addBookToLibrary(event) {
     const year = document.querySelector('#year').value;
     if(title && author && year){
         const book = new Book(title, author, year);
-        myLibrary.push(book);
+        myLibrary.push(book); //updated the library book array
+        saveToLocalStorage(); // hence save new updated array to local storage
         displayBooks();
         form.style.display = 'none'; // Hide the form
         form.reset();
@@ -55,6 +63,7 @@ submitBtn.addEventListener("click", addBookToLibrary);
 
 function removeBook(index) {
     myLibrary.splice(index, 1); // splice removes elements from array
+    saveToLocalStorage(); // save updated array to local storage
     displayBooks(); // re-render books display
 }
 
@@ -65,6 +74,7 @@ function readStatus(index){
     else{
         myLibrary[index].read = false;
     }
+    saveToLocalStorage();
     displayBooks();
 }
 
