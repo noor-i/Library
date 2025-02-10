@@ -32,11 +32,18 @@
             <li><a href="../pages/library.html">Library</a></li>
             <li><a href="../pages/bookfinder.html">AI-Book Finder</a></li>
         </ul>
-        <div class="intro">
-            <h1>Book recommendations just for you.</h1>
-            <h3>Discover new forms of literature with your personal AI Book Finder.</h1>
+        <div class="chatbot-container">
+            <h1>Discover new reads with your personal AI-Book Finder</h1>
+            <div class="chatbot-bg">
+                <div class="chat-window" id="chat-window">
+                    <div class="message bot-message">Hello! What kind of book are you looking for today?</div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="user-input" placeholder="Type a message..." />
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
         </div>
-        <div class="chatbot">PAGE IN PROGRESS</div>
     </div>
     <script src="../js/bookfinder.js"></script>
     <script src="../js/main.js"></script>

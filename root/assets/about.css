@@ -3,6 +3,7 @@
     flex-direction: column;
     margin: 10vh 10vw;
     gap: 5vh;
+    overflow-x: hidden;
 }
 
 .content-container .intro{
@@ -26,6 +27,7 @@
     height: auto;
     margin: auto;
     z-index: 1;
+    max-width: 100%; /* Ensures it doesn’t exceed the parent container */
 }
 
 /* For smaller screens (phones) */
@@ -39,13 +41,14 @@
     display: flex;
     align-items: center;
     transition: transform 0.3s;
+    width: 100%;
 }
 
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 100%;
 }
 
 .swiper-slide img {
@@ -62,6 +65,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+    width: 100%;
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -72,8 +76,15 @@
 
 .content-container .message{
     margin: 2.5rem auto;
-    font-size: clamp(1rem, 3vw, 2rem);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     text-align: center;
     line-height: 1.5;
     background-color: rgba(147, 176, 170, 0.2);
+}
+
+@media (max-width: 250px) {
+    .swiper-container{
+        overflow: hidden;
+    }
+    
 }

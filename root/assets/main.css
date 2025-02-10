@@ -9,14 +9,11 @@ html, body {
     padding: 0px;
     min-height: 100vh;
     width: 100%;
-    overflow-y: auto; /* Allows vertical scrolling */
-    overflow-x: hidden;
     background: linear-gradient(135deg, rgba(255,247,173,1) 0%, rgba(255,201,218,1) 59%);
     background-position: center;
     background-repeat: repeat;
     position: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
     font-weight: 400;
     font-style: normal;
 }
@@ -33,15 +30,19 @@ html, body {
 .container{
     height: 100vh;
     width: 100%;
+    max-width: 100%;
+    overflow-y: auto;
 }
 
 .navbar{
     position: sticky;
     top: 0; /* Sticks to the top */
     z-index: 100;
-    width: 100%;
-    height: 50px;
-    margin: auto;
+    width: 100vw; 
+    min-width: 250px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,7 +52,7 @@ html, body {
 }
 
 .navbar .website-name{
-    margin-left: 10px;
+    margin-left: -1rem;
     display: flex;
     align-items: center;
 
@@ -59,7 +60,7 @@ html, body {
 
 .website-name h1{
     margin-left: -30px; /*pushes logo and website name together*/
-    font-size: 30px;
+    font-size: 1.8rem;
     font-family: "Jersey 15", serif;
     font-weight: 400;
     font-style: normal;
@@ -68,8 +69,8 @@ html, body {
 }
 
 .logo{
-    width: 110px;
-    height: 110px;
+    width: 6.9rem;
+    height: 6.9rem;
     cursor: pointer;
 }
 
@@ -79,7 +80,6 @@ html, body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 30px;
 }
 
 .navbar li{
@@ -92,7 +92,7 @@ html, body {
     text-decoration: none;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 1.5rem;
     white-space: nowrap; /* Prevent wrapping */
     color: rgb(227, 69, 12);
 }
@@ -106,7 +106,7 @@ html, body {
     top: 0;
     right: 0;
     height: 100vh;
-    width: 200px;
+    width: clamp(200px, 20%, 300px);
     z-index: 999;
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: -10px 0 10px rgba(0,0,0,0.2);
@@ -128,7 +128,7 @@ html, body {
 
 .sidebar a{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.5rem;
     width: 100%;
     height: 100%;
     margin: 20px;
@@ -141,23 +141,25 @@ html, body {
 
 .main{
     width: 90%;
-    margin: 32vh auto;
+    margin: 22vh auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1.5rem;
+    min-width: 250px;
 }
 
 .main h1{
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 3rem, 4rem);
 }
 
 .main h2{
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 2rem, 3.5rem);
 }
 
 .main button {
+  margin-top: 1rem;
   background-color: #c2fbd7;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
@@ -169,7 +171,7 @@ html, body {
   text-decoration: none;
   transition: all 250ms;
   border: 0;
-  font-size: 1.65rem;
+  font-size: clamp(1.65rem, 1.70rem, 2rem);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -178,25 +180,6 @@ html, body {
 .main button:hover {
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
-}
-
-
-@media (max-width: 700px){
-    .main h1{
-        font-size: 45px;
-    }
-    .main h2{
-        font-size: 25px;
-    }
-}
-
-@media (max-width: 500px){
-    .main h1{
-        font-size: 30px;
-    }
-    .main h2{
-        font-size: 20px;
-    }
 }
 
 @media (max-width: 850px) {
@@ -208,5 +191,28 @@ html, body {
 @media (max-width: 400px){
     .sidebar{
         width: 100%;
+    }
+}
+
+@media (min-width: 800px){
+    .main h1{
+        font-size: clamp(4.2rem, 4.1rem, 5rem);
+    }
+
+    .main h2{
+        font-size: clamp(3rem, 3.1rem, 4rem);
+    }
+
+    .main button{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 250px) {
+    .sidebar {
+        width: 100vw; /* Ensure sidebar is fully accessible */
+    }
+    .container{
+        overflow-x: auto;
     }
 }
