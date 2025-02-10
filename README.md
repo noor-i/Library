@@ -1,5 +1,5 @@
 # Virtual-Lib 📖
-A Virtual Library App built from scratch using HTML, CSS, and JavaScript. It allows users to manage a collection of books, with the ability to add, remove, and toggle the read status of each book. The app demonstrates my proficiency in DOM manipulation, event handling, and responsive web design.
+A Virtual Library App built from scratch using HTML, CSS, JavaScript, Node.js, Express.js, and Google's Gemini API. It allows users to manage a collection of books, with the ability to add, remove, and toggle the read status of each book. The app demonstrates my proficiency in DOM manipulation, event handling, and responsive web design.
 
 <img src="https://github.com/user-attachments/assets/8b69d4d4-9443-492c-823f-67ecc2c1bb66" width="800" />
 
@@ -11,7 +11,7 @@ A Virtual Library App built from scratch using HTML, CSS, and JavaScript. It all
 * **Toggle Read Status:** Users can update the read status of a book by clicking on "Read" button and can turn the status to "Unread" by reclicking.
 ## Ongoing Features
 **AI-Book Finder (In Progress):**
-* Currently integrating a generative AI model (e.g., OpenAI API).
+* Currently integrating the Gemini API along with Node.js and Express.js for handling HTTP requests, routing user input, and managing API data flow.
 * This feature will provide personalized book suggestions based on the user's interests.
 
 
