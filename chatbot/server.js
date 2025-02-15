@@ -27,7 +27,7 @@ app.post('/chat', async (req, res) => {
     const message = req.body.message; //extract user message from request body
 
     if(!message){
-        return res.status(400).json({error: "Sorry, the message is empty."});
+        return res.json({message: "Sorry, the message is empty."});
     }
 
     try {
