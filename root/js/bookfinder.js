@@ -10,11 +10,24 @@ function displayUserMessage(message) {
     chatWindow.appendChild(newMessageDiv);
 }
 
-function displayBotMessage(data) {
-    const newMessageDiv = document.createElement('div');
-    newMessageDiv.textContent = data.message;
-    newMessageDiv.classList.add('message', 'bot-message');
-    chatWindow.appendChild(newMessageDiv);
+function displayBotMessage(data, isLoading = false) {
+    // Remove existing "Thinking..." message if it exists
+    const existingTypingIndicator = document.getElementById("typing-indicator");
+    if (existingTypingIndicator) {
+        existingTypingIndicator.remove();
+    }
+
+    if (isLoading) {
+        const loadingMessage = document.createElement('div');
+        loadingMessage.classList.add('message', 'bot-message', 'loading');
+        loadingMessage.id = "typing-indicator"; 
+        chatWindow.appendChild(loadingMessage);
+    } else {
+        const newMessageDiv = document.createElement('div');
+        newMessageDiv.textContent = data.message;
+        newMessageDiv.classList.add('message', 'bot-message');
+        chatWindow.appendChild(newMessageDiv);
+    }
 }
 
 async function sendMessage() {
@@ -23,6 +36,9 @@ async function sendMessage() {
     const message = userMessage.value;
     displayUserMessage(message);
     userMessage.value = '';
+
+    //Show ... while response is being returned
+    displayBotMessage({}, isLoading = true);
 
     //Send user input to Gemini API
     try {
@@ -33,7 +49,7 @@ async function sendMessage() {
         });
 
         const data = await response.json();
-        displayBotMessage(data);
+        displayBotMessage(data, false);
 
     } catch (error) {
         console.log("Error:", error)

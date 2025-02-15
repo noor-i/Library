@@ -100,3 +100,22 @@
         width: 100%; /* Make button full width */
     }
 }
+
+/* Styling for response wait placeholder for chatbot */
+.loading {
+    font-weight: bold;
+    color: #333;
+    font-style: italic;
+}
+
+@keyframes dots {
+    0% { content: "Thinking"; }
+    33% { content: "Thinking."; }
+    66% { content: "Thinking.."; }
+    100% { content: "Thinking..."; }
+}
+
+.loading::after {
+    content: "Thinking";
+    animation: dots 1.5s infinite steps(4);
+}
