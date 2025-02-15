@@ -32,7 +32,11 @@ app.post('/chat', async (req, res) => {
 
     try {
         const model = geminiAI.getGenerativeModel({model: "gemini-2.0-flash"});
-        const result = await model.generateContent(message);
+
+        // Modify user message to enforce brevity
+        const modifiedMessage = `The context is literature and book recommendations, max response length(250 words): ${message}`;
+
+        const result = await model.generateContent(modifiedMessage);
         res.json({ message: result.response.text() });
 
     } catch (error) {
