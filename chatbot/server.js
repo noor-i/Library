@@ -1,62 +1,52 @@
-// Load environment variables from a .env file
-require("dotenv").config();
+// Import required modules and initialize environment variables
+require("dotenv").config(); // load environment variables from .env file
+const express = require('express');
+const cors = require('cors');
 
-// Import required modules
-const express = require("express"); // Web framework for handling HTTP requests
-const path = require("path"); // Helps manage file paths
-const { GoogleGenerativeAI } = require("@google/generative-ai"); // Google's AI SDK for Gemini API
+const { GoogleGenerativeAI } = require("@google/generative-ai"); // Import Google Generative AI SDK
 
 // Initialize Express app
 const app = express();
 
-// Check if API key exists in the environment variables
+app.use(cors());
+app.use(express.json()); // Allow parsing of JSON requests
+
+// Check if the GEMINI_API_KEY is available in the environment variables
+// This is a good practice to avoid running the app without the required API key.
 if (!process.env.GEMINI_API_KEY) {
-    console.error("Error: .env file is missing the API Key");
-    process.exit(1); // Exits the process with an error (indicates failure).
+    console.error("Error: env file is missing the API KEY");
+    process.exit(1); // Exit the process if the API key is not set
 }
 
-// Initialize Google Generative AI with the API key
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+// Initialize Google Generative AI client
+const geminiAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// Middleware to handle URL-encoded and JSON data in requests
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+//Define Routes: /chat endpoint where the frontend sends POST requests
+app.post('/chat', async (req, res) => {
 
-// Serve static files (like HTML, CSS, and JavaScript) from the "root" folder
-app.use(express.static(path.join(__dirname, "root")));
+    const message = req.body.message; //extract user message from request body
 
-/**
- * Route: POST /get
- * Description: Receives a text query from the client, sends it to Gemini AI, and returns the response.
- */
-app.post("/get", async (req, res) => {
-    const userInput = req.body.msg; // Extract the user input text from the request body
-
-    // If no input is provided, return an error response
-    if (!userInput) {
-        return res.status(400).json({ error: "No text input provided." });
+    if(!message){
+        return res.status(400).json({error: "Sorry, the message is empty."});
     }
 
     try {
-        // Initialize the Gemini AI model
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = geminiAI.getGenerativeModel({model: "gemini-2.0-flash"});
+        const result = await model.generateContent(message);
+        res.json({ message: result.response.text() });
 
-        // Send the user's text input to Gemini AI and generate a response
-        const response = await model.generateContent([userInput]);
-
-        // Send the AI-generated response back to the client as JSON
-        res.json({ response: response.response.text() });
     } catch (error) {
-        // Handle errors and return an appropriate response
         console.error("Error generating response:", error);
-        res.status(error.status || 500).json({ error: "An error occurred while generating the response." });
+        res.status(500).json({ error: "Failed to generate response" });
     }
 });
 
-// Define the port for the server (use the environment variable or default to 3000)
-const PORT = process.env.PORT || 3000;
-
-// Start the server and listen on the defined port
+//Start the server 
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
+
+
+
+
