@@ -42,7 +42,7 @@ async function sendMessage() {
 
     //Send user input to Gemini API
     try {
-        const response = await fetch('https://library-backend-sable.vercel.app/chat', {
+        const response = await fetch('https://backend-library-7ug4.onrender.com/chat', {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: message })
