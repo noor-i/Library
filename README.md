@@ -5,7 +5,7 @@ Allows users to manage a collection of books (add, remove, and toggle the read s
 
 <img src="https://github.com/user-attachments/assets/8b69d4d4-9443-492c-823f-67ecc2c1bb66" width="700" />
 
-<img src="https://github.com/user-attachments/assets/56bfaecd-736a-49a1-b3e9-2f9f346268ff" width="430" />
+<img src="https://github.com/user-attachments/assets/56bfaecd-736a-49a1-b3e9-2f9f346268ff" width="450" />
 
 <img src="https://github.com/user-attachments/assets/45ba8944-4949-43fe-8254-d485cf299fc8" height="325" />
 
