@@ -21,6 +21,11 @@ if (!process.env.GEMINI_API_KEY) {
 // Initialize Google Generative AI client
 const geminiAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+// Define a welcome route
+app.get('/', (req, res) => {
+    res.send("Welcome to the chatbot backend!");
+});
+
 //Define Routes: /chat endpoint where the frontend sends POST requests
 app.post('/chat', async (req, res) => {
 
