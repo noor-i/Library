@@ -16,7 +16,7 @@ This application demonstrates my proficiency in DOM manipulation, event handling
 
 <img src="https://github.com/user-attachments/assets/56bfaecd-736a-49a1-b3e9-2f9f346268ff" width="650" />
 
-<img src="https://github.com/user-attachments/assets/45ba8944-4949-43fe-8254-d485cf299fc8" height="450" />
+<img src="https://github.com/user-attachments/assets/45ba8944-4949-43fe-8254-d485cf299fc8" width="550" />
 
 ## Instructions ##
 Run the server.js file by doing the following, and then open any of the html files to access the website locally.
